@@ -1,0 +1,25 @@
+$gridEle: 12;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+%main {
+  background-color: #eee;
+  padding: 15px;
+  border: 0.5px solid #ddd;
+  float: left;
+}
+#app {
+  display: inline-block;
+  width: 100%;
+}
+
+@for $i from 1 to $gridEle {
+  .col-#{$i} {
+    width: (100% / ($gridEle / $i));
+    @extend %main;
+  }
+}
